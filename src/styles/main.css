@@ -1,0 +1,11 @@
+@keyframes background {
+    100% { background-size: 4000px 1000px; }
+}
+
+body {
+    background-image: url("/assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: 2000px 1000px;
+    animation: 
+        background 10s infinite alternate ease-in-out
+}
