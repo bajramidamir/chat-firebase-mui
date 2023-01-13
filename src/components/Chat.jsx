@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import SignOut from './SignOut';
 import SendMessage from "./SendMessage";
 import ChatMessage from './ChatMessage';
@@ -10,8 +10,9 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const Chat = () => {
 
+  const scroll = useRef();
   const messagesRef = collection(db, 'messages');
-  const q = query(messagesRef, orderBy("createdAt"), limit(25));
+  const q = query(messagesRef, orderBy("createdAt"));
                       
   const [messages] = useCollectionData(q, {idField: 'id'});
 
@@ -27,10 +28,11 @@ const Chat = () => {
             {messages && messages.map(message => <ChatMessage key={message.id} message={message} />)}
           </Box>
 
-
+        
         
         </Container>
-        <SendMessage />
+        <SendMessage scroll={scroll} />
+        <span ref={scroll}></span>
     </div>
   )
 }

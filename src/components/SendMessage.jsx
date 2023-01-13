@@ -4,7 +4,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { Container, Box, Input, Button, Grid } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
-const SendMessage = () => {
+const SendMessage = ({ scroll }) => {
 
   const [message, setMessage] = useState('');
 
@@ -20,7 +20,9 @@ const SendMessage = () => {
       photoUrl: photoURL,
       uname: displayName
     })
+
     setMessage('');
+    scroll.current.scrollIntoView({ behaviour: 'smooth' })
   }
 1
 
