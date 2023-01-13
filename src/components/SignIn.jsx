@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Button, Paper, Box,  Avatar, Typography } from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LoginIcon from '@mui/icons-material/Login';
-import { signInWithPopup , GoogleAuthProvider } from 'firebase/auth';
+import { signInWithRedirect,  GoogleAuthProvider } from 'firebase/auth';
 import { auth } from "../firebase.js";
 
 
@@ -10,7 +10,7 @@ const SignIn = () => {
 
     const userSignIn = () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider);
+        signInWithRedirect(auth, provider);
     }
 
 
