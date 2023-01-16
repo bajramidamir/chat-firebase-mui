@@ -12,11 +12,13 @@ const ChatMessage = ( props ) => {
             <Typography sx={{ my:1 }} >
                     {uname}
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}  >
-                <Avatar sx={{ mr:2, display: sent ? 'hidden' : '' }} src={photoUrl}></Avatar>
-                <Paper elevation={0} sx={{ p:1, borderRadius:3 }} >
-                    <Typography variant="p">{text}</Typography>
-                </Paper>
+            <Box sx={{ display: 'flex', alignItems: 'normal' }}>
+            <Avatar sx={{ mr:2, display: sent ? 'hidden' : '' }} src={photoUrl}></Avatar>
+                <Box sx={{ minWidth:0, flexWrap:'wrap', flexDirection: sent ? 'row-reverse' : 'row' }} >
+                    <Paper elevation={0} sx={{ p:1, borderRadius:3 }} >
+                        <Typography variant="p" sx={{ overflowWrap:'break-word', minWidth:0 }}>{text}</Typography>
+                    </Paper>
+                </Box>
             </Box>
         </Container>
         

@@ -20,8 +20,8 @@ const Chat = () => {
     <div>
       <CssBaseline />
         <SignOut />
-        <Container
-        sx={{ my:2, p:1, width:"100%", minHeight:"60vh", maxHeight:"60vh", overflowY:'scroll'}}>
+        <Container maxWidth="md"
+        sx={{ my:2, p:1, width:"100%", minHeight:"70vh", maxHeight:"70vh", overflowY:'scroll'}}>
         
 
           <Box>

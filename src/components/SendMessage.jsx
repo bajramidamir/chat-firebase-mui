@@ -27,14 +27,19 @@ const SendMessage = ({ scroll }) => {
 1
 
   return (
-      <Container sx={{p:1}} maxWidth="sm">
-        <Box>
-          <form onSubmit={sendMsg}>
-            <Input sx={{mx:2}} value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message...' />
-            <Button startIcon={<SendRoundedIcon />} variant='contained' type='submit'>Send</Button>
-          </form>
-        </Box>
-    </Container>
+    <Grid container spacing={0} direction='column' alignItems='center' justifyContent='center'>
+      <Grid item>
+          <Container sx={{p:1}} maxWidth="sm">
+            <Box>
+              <form onSubmit={sendMsg}>
+                <Input sx={{ mx:2 }} value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message...' />
+                <Button startIcon={<SendRoundedIcon />} variant='string' type='submit'>Send</Button>
+              </form>
+            </Box>
+          </Container>
+      </Grid>
+    </Grid>
+      
     
     
   )
