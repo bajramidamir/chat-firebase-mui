@@ -27,7 +27,7 @@ const SendMessage = ({ scroll }) => {
 1
 
   return (
-      <Container sx={{bgcolor:'white', borderRadius:2, p:1}} maxWidth="sm">
+      <Container sx={{p:1}} maxWidth="sm">
         <Box>
           <form onSubmit={sendMsg}>
             <Input sx={{mx:2}} value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message...' />

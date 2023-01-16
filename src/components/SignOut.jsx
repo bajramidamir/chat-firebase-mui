@@ -1,15 +1,19 @@
 import React from 'react';
-import { Button } from "@mui/material";
+import { Typography, AppBar, Toolbar, Button } from "@mui/material";
 import { auth } from "../firebase.js";
 import LogoutIcon from '@mui/icons-material/Logout';
 
+
 const SignOut = () => {
   return (
-    <div>
-        <Button variant="contained" startIcon={<LogoutIcon />} onClick={() => auth.signOut()}>
-            Sign out 
+    <AppBar position='static'>
+      <Toolbar>
+        <Button startIcon={<LogoutIcon />} variant='string' onClick={() => auth.signOut()} disableElevation>
+          Sign out
         </Button>
-    </div>
+      </Toolbar>
+    </AppBar>
+    
   )
 }
 

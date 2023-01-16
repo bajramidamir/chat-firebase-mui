@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import SignOut from './SignOut';
 import SendMessage from "./SendMessage";
 import ChatMessage from './ChatMessage';
-import { collection, getDocs, query ,orderBy, limit } from "firebase/firestore"
+import { collection, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase.js";
-import { Box, Typography, CssBaseline , Avatar, Container } from "@mui/material";
+import { Box, CssBaseline, Container } from "@mui/material";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 
@@ -20,12 +20,12 @@ const Chat = () => {
     <div>
       <CssBaseline />
         <SignOut />
-        <Container maxWidth="sm"
-        sx={{bgcolor:'white', my:2, p:1, borderRadius:2, minHeight:"60vh" , maxHeight:"60vh", overflowY:'scroll'}}>
+        <Container maxWidth='false'
+        sx={{ my:2, p:1, width:"100%", minHeight:"60vh", maxHeight:"60vh", overflowY:'scroll'}}>
 
 
           <Box>
-            {messages && messages.map(message => <ChatMessage key={message.id} message={message} />)}
+            {messages && messages.map(message => <ChatMessage key={message.createdAt} message={message} />)}
           </Box>
 
         
