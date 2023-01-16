@@ -20,9 +20,9 @@ const Chat = () => {
     <div>
       <CssBaseline />
         <SignOut />
-        <Container maxWidth='lg'
+        <Container
         sx={{ my:2, p:1, width:"100%", minHeight:"60vh", maxHeight:"60vh", overflowY:'scroll'}}>
-
+        
 
           <Box>
             {messages && messages.map(message => <ChatMessage key={message.createdAt} message={message} />)}
