@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { db, auth } from "../firebase.js";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, refEqual } from "firebase/firestore";
 import { Container, Box, Input, Button, Grid } from '@mui/material';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
@@ -22,7 +22,9 @@ const SendMessage = ({ scroll }) => {
     })
 
     setMessage('');
-    scroll.current.scrollIntoView({ behaviour: 'smooth' })
+    
+    scroll.current.scrollIntoView();
+
   }
 1
 

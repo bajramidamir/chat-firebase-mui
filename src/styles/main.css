@@ -10,3 +10,10 @@ body {
         background 10s infinite alternate ease-in-out
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.hidden {
+    visibility: hidden;
+}
