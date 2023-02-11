@@ -27,6 +27,7 @@ const Chat = () => {
             <span className='hidden' ref={scroll}>hidden text</span>
           </Box>
         
+        
         </Container>
         <SendMessage scroll={scroll} />
         

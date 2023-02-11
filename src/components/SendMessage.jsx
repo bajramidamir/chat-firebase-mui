@@ -24,6 +24,7 @@ const SendMessage = ({ scroll }) => {
     setMessage('');
     
     scroll.current.scrollIntoView();
+    
 
   }
 1
