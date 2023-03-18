@@ -4,6 +4,10 @@ import { Box, Container,  Typography, Avatar, Paper } from "@mui/material";
 
 const ChatMessage = ( props ) => {
     const { text, photoUrl, uname, createdAt, uid } = props.message;
+    
+    console.log(props);
+    console.log("STANI");
+    console.log(props.message);
 
     const sent = (uid === auth.currentUser.uid);
 
